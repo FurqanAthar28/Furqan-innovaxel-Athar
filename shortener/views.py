@@ -35,6 +35,7 @@ class ShortURLDetail(APIView):
 
     # Replace the existing URL with new data
     def put(self, request, short_code):
+        #Replaces the entire URL record for the given short_code
         short_url = get_object_or_404(ShortURL, short_code=short_code)
         serializer = ShortURLSerializer(short_url, data=request.data)
         if serializer.is_valid():
@@ -44,6 +45,7 @@ class ShortURLDetail(APIView):
 
     # Partially update (PATCH) an existing short URL
     def patch(self, request, short_code):
+        #Partially updates fields of the URL record
         short_url = get_object_or_404(ShortURL, short_code=short_code)
         serializer = ShortURLSerializer(short_url, data=request.data, partial=True)
         if serializer.is_valid():
