@@ -6,7 +6,8 @@ from .models import ShortURL
 from .serializers import ShortURLSerializer
 
 
-# Handles creation of a new short URL
+"""Handles creation of short URLs via POST request"""
+
 class ShortURLCreate(APIView):
     def post(self, request):
         # Deserialize incoming data
