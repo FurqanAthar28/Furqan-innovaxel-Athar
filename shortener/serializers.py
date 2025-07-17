@@ -4,6 +4,7 @@ from .models import ShortURL
 class ShortURLSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShortURL
+        # Serializes all the fields
         fields = '__all__'
 
         
