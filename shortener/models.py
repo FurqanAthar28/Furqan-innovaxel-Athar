@@ -12,7 +12,8 @@ class ShortURL(models.Model):
     short_code = models.CharField(max_length=10, unique=True, blank=True,null=True)  # Auto-generated
     created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)  # Set only on creation
     updated_at = models.DateTimeField(auto_now=True,blank=True,null=True)  # Updated on every save
-    access_count = models.PositiveIntegerField(default=0,blank=True,null=True)  # Number of times accessed
+    # Stores how many times the short URL has been accessed
+    access_count = models.PositiveIntegerField(default=0,blank=True,null=True)
 
     def save(self, *args, **kwargs):
         # If no short_code is provided, generate a unique one automatically
