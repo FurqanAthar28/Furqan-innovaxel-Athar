@@ -12,3 +12,4 @@ urlpatterns = [
     path('shorten/<str:short_code>', ShortURLDetail.as_view()),  # GET, PUT, PATCH, DELETE
     path('shorten/<str:short_code>/stats', ShortURLStats.as_view()),  # GET - stats
 ]
+
