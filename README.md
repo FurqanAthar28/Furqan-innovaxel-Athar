@@ -34,3 +34,14 @@ This will:
   "updated_at": "2025-07-16T14:41:45Z",
   "access_count": 3
 }
+## 🛠️ How to Run This Project
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/FurqanAthar28/Furqan-innovaxel-Athar.git
+cd Furqan-innovaxel-Athar
+
+
+### Virtual enviroment for shorten_url Project
+python -m venv .venv
+source .venv/Scripts/activate
