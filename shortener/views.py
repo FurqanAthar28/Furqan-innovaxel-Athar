@@ -26,7 +26,8 @@ class ShortURLDetail(APIView):
     # Retrieve the original URL and increment access count
     def get(self, request, short_code):
         short_url = get_object_or_404(ShortURL, short_code=short_code)
-        short_url.access_count += 1  # Track usage
+        # Increase the number of times this short URL has been accessed
+        short_url.access_count += 1  # Track the number of times the url is accessed
         short_url.save()
         serializer = ShortURLSerializer(short_url)
         return Response(serializer.data, status=status.HTTP_200_OK)
