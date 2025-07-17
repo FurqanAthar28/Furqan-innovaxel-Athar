@@ -2,6 +2,9 @@ from django.db import models
 import string
 import random
 
+# Automatically generate a unique short_code if not provided
+
+
 # Helper function to generate a random short code
 def generate_shortcode(length=6):
     characters = string.ascii_letters + string.digits
