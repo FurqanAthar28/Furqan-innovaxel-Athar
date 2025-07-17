@@ -24,7 +24,7 @@ class ShortURLCreate(APIView):
 # Handles retrieval, update, and deletion of a short URL
 class ShortURLDetail(APIView):
 
-    # Retrieve the original URL and increment access count
+    #Returns analytics for a given short code such as access count and timestamps
     def get(self, request, short_code):
         short_url = get_object_or_404(ShortURL, short_code=short_code)
         # Increase the number of times this short URL has been accessed
