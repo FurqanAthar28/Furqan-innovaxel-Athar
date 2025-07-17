@@ -15,7 +15,7 @@ class ShortURL(models.Model):
     access_count = models.PositiveIntegerField(default=0,blank=True,null=True)  # Number of times accessed
 
     def save(self, *args, **kwargs):
-        # Generate a short code only if not already set
+        # If no short_code is provided, generate a unique one automatically
         if not self.short_code:
             self.short_code = self.generate_unique_code()
         super().save(*args, **kwargs)
